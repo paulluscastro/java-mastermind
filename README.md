@@ -224,7 +224,7 @@ Where:
 
 - **Command:** enter/{key}/{user}
 - **HTTP Method:** GET
-- **Example:** `http://<server-name>/mastermind/api/multi/enter/axiom`
+- **Example:** `http://<server-name>/mastermind/api/multi/enter/35D5B41695A249F9BCB95DB56D412165/axiom`
 - **Description:** Inserts the user into the Registered Users pool of the game, allowing him or her to make guesses. If the user is already inserted in the game's pool, then no action is taken, but if the inserted player didn't exist yet, he or she is inserted in the game's pool and the status of the game changes to "OPEN", wich permits the pĺayers to make guesses.
 
 #### status
@@ -240,3 +240,17 @@ Where:
 - **HTTP Method:** GET
 - **Example:** `http://<server-name>/mastermind/api/multi/guess/35D5B41695A249F9BCB95DB56D412165/paullus/DBBD`
 - **Description:** Similar to the "guess" command from the Single Player Mode, but instead of the last guess made by the user returns all the guesses made;
+
+## Questions
+
+#### 1. What was the hardest part?
+
+The hardest part of all was to decided which kind of implementation should I use. Actually I made 3 projects before deciding for the architecture that I used.
+
+#### 2. If you could go back and give yourself advice at the beginning of the project, what would it be?
+
+_*"Read the entire challenge and test the provided example, before making decisions and do some code."*_
+
+#### 3. If you could change something about this challenge, what would it be?
+
+I did it. In the challenge mode I made the game customizable. You can set available characters if you want to. You can also decide the size of the password, if it will have repeated characters or not. I could have made it available on Single Player and Multiplayer modes also, but I was afraid it could have drained too much of my time. Maybe I'll do it after a few days.

@@ -2,7 +2,7 @@
 
 ## Overview
 
-This API allows you to develop your own Mastermind game with HTML5, CSS3 and Javascript. Don't worry about game rules, as they are already implemented in this API. This documentation have all the information you need to make a good use of this API.
+This API allows you to develop your own [Mastermind game](https://en.wikipedia.org/wiki/Mastermind_(board_game)#Genetic_algorithm) with HTML5, CSS3 and Javascript. Don't worry about game rules, as they are already implemented in this API. This documentation have all the information you need to make a good use of this API.
 
 This API have 3 gaming modes:
 
@@ -51,7 +51,7 @@ Everytime a user makes a guess, the API will respond with a Guess object. Exampl
 Where:
 
 - **guess** is the guess sent by the user;
-- **clue** is the result of the processed guess;
+- **clue** is the result of the processed guess. When guessing the concealed password the API will respond with "1" (perfect match), "9" (match a letter but not it's position) or "X" (bad shot);
 - **dateTime** is the date/hour (dd/mm/yyyy HH:MM:SS) the user made the guess (date and hour taken from the server);
 - **status** is the result of the guess;
 
@@ -254,3 +254,28 @@ _*"Read the entire challenge and test the provided example, before making decisi
 #### 3. If you could change something about this challenge, what would it be?
 
 I did it. In the challenge mode I made the game customizable. You can set available characters if you want to. You can also decide the size of the password, if it will have repeated characters or not. I could have made it available on Single Player and Multiplayer modes also, but I was afraid it could have drained too much of my time. Maybe I'll do it after a few days.
+
+
+## FAQ
+
+#### What technologies were used?
+
+**MASTER MIND API v1.0** was built in Java using Jersey and Jackson, package dependencies are held by Maven. I used [Simple REST Client](https://chrome.google.com/webstore/detail/simple-rest-client/fhjcajmcbmldlhcimfajhfbgofnpcjmb) to make the tests.
+The project was based on [this Maven archetype](https://jersey.java.net/documentation/latest/user-guide.html#new-from-archetype).
+
+#### How do I run the project?
+
+The project was made with Maven. Go to the directory where the pom.xml file is located and run the command bellow in the command line.
+```
+mvn clean compile package -U exec:java -Dexec.mainClass="br.com.paullus.mastermind.Main"
+```
+
+#### Why, in the Challenge Mode, did you allow the user that is creating the game to provide a password with letters that are not in the "allowed" list?
+
+For two simple reasons:
+1. I wanted the API to respond the most "unbreakable" way, avoiding error messages and HTTP codes different from the 200 (OK).
+2. Friends can prank each other ;)
+
+#### What came first: the chicken or the egg?
+
+[The egg](http://science.howstuffworks.com/life/genetic/question85.htm). Period. =D
